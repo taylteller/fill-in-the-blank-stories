@@ -9,16 +9,16 @@ The javascript `Date` as string. Type represents date and time as the ISO Date s
 scalar DateTime
 
 type Query {
-  getRandomStory: [Story]
+  getRandomStory: [Story!]!
 }
 
 """Story Model"""
 type Story {
-  blankWords: [String]
-  dateCreated: DateTime
-  id: ID
-  story: String
-  title: String
-  totalBlanks: Int
-  totalWords: Int
+  blankWords: [String!]!
+  dateCreated: DateTime!
+  id: ID!
+  story: String!
+  title: String!
+  totalBlanks: Int!
+  totalWords: Int!
 }
