@@ -9,7 +9,6 @@ import { Story, StoryModel } from "./StoryModel"
 export class StoryResolver {
     @Query(_returns => [Story])
     async getRandomStory() {
-        console.log("db response", await StoryModel.aggregate([{ $sample: { size: 1 } }]))
         return await StoryModel.aggregate([{ $sample: { size: 1 } }])
     }
 }
