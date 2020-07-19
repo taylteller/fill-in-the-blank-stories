@@ -21,7 +21,7 @@ const main = async () => {
 
     // create mongoose connection
     const mongoose = await Mongoose.connect(
-        `mongodb://localhost:27017/test`,
+        `mongodb://localhost:27017/storyBlanksApi`,
         {
             useNewUrlParser: true,
             useUnifiedTopology: true,

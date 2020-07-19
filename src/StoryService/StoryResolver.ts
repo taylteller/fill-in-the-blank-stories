@@ -2,14 +2,13 @@ import {
     Query,
     Resolver,
 } from "type-graphql"
-import StorySchema from "./StorySchema"
+import { Story, StoryModel } from "./StoryModel"
 
-@Resolver(_of => StorySchema)
+@Resolver(_of => Story)
 
 export class StoryResolver {
-    @Query(() => String)
-    sample(): String {
-        return "Hello"
+    @Query(_returns => [Story])
+    async returnRandomStory() {
+        return await StoryModel.aggregate([{ $sample: { size: 1 } }])
     }
-
 }
